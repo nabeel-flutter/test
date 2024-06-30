@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "449794720316",
+    "project_id": "duseca-test-nabeel",
+    "storage_bucket": "duseca-test-nabeel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449794720316:android:16379562a3c2096b7af939",
+        "android_client_info": {
+          "package_name": "com.duseca.your_app_test.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCLpLjeRFicv9qY1Z-YGEP8UOWXhdUmo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

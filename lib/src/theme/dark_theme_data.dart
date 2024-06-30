@@ -1,0 +1,102 @@
+import 'package:control_style/control_style.dart';
+import 'package:flutter/material.dart';
+import 'package:your_app_test/src/theme/palette.dart';
+import 'package:your_app_test/src/style/font_style.constant.dart';
+import 'package:your_app_test/src/theme/lighten_darken_color.dart';
+import 'package:your_app_test/src/theme/theme.dart';
+
+ThemeData darkThemeData(MyTheme theme, {Color? color}) {
+  return ThemeData(
+    useMaterial3: true,
+    iconTheme: const IconThemeData(color: Palette.white),
+    inputDecorationTheme: const InputDecorationTheme(
+      filled: true,
+      fillColor: Palette.black,
+      border: UnderlineInputBorder(
+        borderSide: BorderSide(color: Palette.white),
+      ),
+      focusedBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: Palette.white),
+      ),
+      enabledBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: Palette.white),
+      ),
+      errorBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: Palette.white),
+      ),
+      focusedErrorBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: Palette.white),
+      ),
+    ),
+    colorSchemeSeed: color ?? theme.getColor(),
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: Palette.black,
+    appBarTheme: AppBarTheme(
+        backgroundColor: darken(theme.getColor(), 0.35),
+        foregroundColor: Palette.white),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        shape: WidgetStateProperty.resolveWith((states) {
+          return DecoratedOutlinedBorder(
+            backgroundGradient: LinearGradient(colors: [
+              Colors.blue.withOpacity(0.5),
+              Colors.blue.withOpacity(0.2)
+            ]),
+            child:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          );
+        }),
+        fixedSize: const WidgetStatePropertyAll(Size.fromHeight(60)),
+        maximumSize: const WidgetStatePropertyAll(Size.fromHeight(60)),
+        minimumSize: const WidgetStatePropertyAll(Size.fromHeight(60)),
+        backgroundColor: WidgetStatePropertyAll(
+          theme.getColor(),
+        ),
+        foregroundColor: const WidgetStatePropertyAll(
+          Palette.white,
+        ),
+      ),
+    ),
+    drawerTheme: const DrawerThemeData(
+        backgroundColor: Colors.transparent, elevation: 0),
+    buttonTheme: ButtonThemeData(
+      buttonColor: Palette.black,
+      textTheme: ButtonTextTheme.accent,
+      height: 70,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(
+          10,
+        ),
+      ),
+    ),
+    textTheme: TextTheme(
+      titleSmall: FontStylesConstants.gilroy(fontSize: 8, color: Palette.white),
+      titleMedium:
+          FontStylesConstants.gilroy(fontSize: 10, color: Palette.white),
+      bodySmall: FontStylesConstants.gilroy(fontSize: 14, color: Palette.white),
+      bodyMedium:
+          FontStylesConstants.gilroy(fontSize: 16, color: Palette.white),
+      bodyLarge: FontStylesConstants.gilroy(fontSize: 18, color: Palette.white),
+      labelSmall:
+          FontStylesConstants.gilroy(fontSize: 12, color: Palette.white),
+      titleLarge:
+          FontStylesConstants.gilroy(fontSize: 20, color: Palette.white),
+      labelMedium:
+          FontStylesConstants.gilroy(fontSize: 22, color: Palette.white),
+      labelLarge:
+          FontStylesConstants.gilroy(fontSize: 24, color: Palette.white),
+      headlineSmall:
+          FontStylesConstants.gilroy(fontSize: 26, color: Palette.white),
+      headlineMedium:
+          FontStylesConstants.gilroy(fontSize: 28, color: Palette.white),
+      headlineLarge:
+          FontStylesConstants.gilroy(fontSize: 30, color: Palette.white),
+      displaySmall:
+          FontStylesConstants.gilroy(fontSize: 32, color: Palette.white),
+      displayMedium:
+          FontStylesConstants.gilroy(fontSize: 34, color: Palette.white),
+      displayLarge:
+          FontStylesConstants.gilroy(fontSize: 36, color: Palette.white),
+    ),
+  );
+}
